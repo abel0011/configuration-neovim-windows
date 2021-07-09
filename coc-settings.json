@@ -1,0 +1,29 @@
+ 
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "typescript",
+    "json",
+    "cs"
+  ],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ]
+    }
+  },
+  "html.enable": true,
+  "html.autoClosingTags": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.includeAutomaticOptionalChainCompletions": true,
+  "javascript.suggest.includeAutomaticOptionalChainCompletions": true
+}
