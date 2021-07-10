@@ -1,6 +1,10 @@
  
 {
   "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "yaml",
+    "javascript",
     "go",
     "typescript",
     "json",

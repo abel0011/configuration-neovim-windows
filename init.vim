@@ -1,53 +1,48 @@
-set title  " Muestra el nombre del archivo en la ventana de la terminal
+"██╗███╗░░██╗██╗████████╗░░░██╗░░░██╗██╗███╗░░░███╗
+"██║████╗░██║██║╚══██╔══╝░░░██║░░░██║██║████╗░████║
+"██║██╔██╗██║██║░░░██║░░░░░░╚██╗░██╔╝██║██╔████╔██║
+"██║██║╚████║██║░░░██║░░░░░░░╚████╔╝░██║██║╚██╔╝██║
+"██║██║░╚███║██║░░░██║░░░██╗░░╚██╔╝░░██║██║░╚═╝░██║ 
+"╚═╝╚═╝░░╚══╝╚═╝░░░╚═╝░░░╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
+"by Abel Paz 
+set title   " Muestra el nombre del archivo en la ventana de la terminal
 set number  " Muestra los números de las líneas
-set mouse=a  " Permite la integración del mouse (seleccionar texto, mover el cursor)
+set mouse=a " Permite la integración del mouse (seleccionar texto, mover el cursor)
+set encoding=UTF-8
 " Tamaño por defecto del terminal
-"set termwinsize=10x0
+""set termwinsize=10x0
 
-set relativenumber "Numero de saltos
-set cursorline  " Resalta la línea actual
-set cuc cul " Resalta la columna
+set relativenumber    "Numero de saltos
+set cursorline        "Resalta la línea actual
+set cuc cul           "Resalta la fila y la columna
+"set cursorline       "Resalta la línea actual
+set list listchars=tab:>\ ,trail:+,eol:$  "Configuración Parrot
 syntax on
-"set cursorline  " Resalta la línea actual
-
-"Configuración parrot
-set shiftwidth=2
-set mouse=a
-set list listchars=tab:>\ ,trail:+,eol:$
-
-" Indentación a 5 espacios
-set tabstop=5
-set shiftwidth=5
-set softtabstop=5
-set shiftround
-set expandtab  " Insertar espacios en lugar de <Tab>s
-set hidden  " Permitir cambiar de buffers sin tener que guardarlos
-set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
-set spelllang=en,es  " Corregir palabras usando diccionarios en inglés y español
-set termguicolors  " Activa true colors en la terminal
-set splitbelow
-set splitright
-
-set hlsearch " resala la busqueda
-set incsearch "la busqueda vaya apareciendo
-" TextEdit might fail if hidden is not set.
-set hidden
-" Some servers have issues with backup files, see #649.
-set nobackup
+set tabstop=5         "numero de espacios visuales por tab
+set shiftwidth=5      "numero de espacios tabulados
+set softtabstop=5     "numero de espacios en el atabulador al editar
+set shiftround 
+set expandtab             "los tabuladores son espacios
+set hidden                "el archivo no se muestra si noy un archivo para este buffer
+set smartcase             "No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
+set spelllang=en_us,es    " Corregir palabras usando diccionarios en inglés y español
+set termguicolors         "Activa colors en la terminal
+set splitbelow            "el siguiete buffer se cree abajo (ejem cmd)
+set hlsearch              "resalta la busqueda
+set incsearch             "resalta la busqueda
+set nobackup              "evita recuperar el archivo
 set nowritebackup
-" Give more space for displaying messages.
-set cmdheight=2
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=200
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
+set cmdheight=2           "numero de lineas de pantalla a utilizar
+set updatetime=200        "el archivo de intercambio se guarda en 2s default 4s
+set shortmess+=c          "ayuda a evitar todos los mensajes hit-enter (mensajes de ayuda)
 
 
 
 
 " Required:
 call plug#begin('~/.config/nvim/plugged')
+"Plugged"
+"source $HOME/AppData/Local/nvim/plugins/plug-config.vim
 "
 "*****************************************************************************
 "" Plug install packages
@@ -61,25 +56,23 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 
-Plug 'scrooloose/nerdtree' "
-Plug 'dracula/vim' " Nesesario para el theme dracula
-Plug 'tpope/vim-surround'  " Es buena idea agregar una descripción del plugin
+Plug 'scrooloose/nerdtree' "Presioando n se despliega options
+Plug 'tpope/vim-surround'  
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  " Temas para airline
 Plug 'Yggdroot/indentLine'
 
 "Live Server"
-Plug 'turbio/bracey.vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'Shougo/echodoc.vim' " Muestra la firma de la función.
+Plug 'Shougo/echodoc.vim' "Muestra la firma de la función.
 
-Plug 'w0rp/ale' " Analizador estático de codigo
+Plug 'w0rp/ale'         "Analizador estático de codigo
 
-Plug 'sheerun/vim-polyglot' " Resaltado de sintaxix polyglot
+Plug 'sheerun/vim-polyglot' "Resaltado de sintaxix polyglot
 
-Plug 'ryanoasis/vim-devicons' " Mostrar icons
+Plug 'ryanoasis/vim-devicons' "Mostrar icons
 
-Plug 'yggdroot/indentline' "ident line
+
 
 Plug 'ianks/vim-tsx'
 
@@ -89,6 +82,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim'
+
 let g:coc_global_extensions=['coc-json' , 'coc-tsserver' , 'coc-emmet' , 'coc-tslint' , 'coc-prettier','coc-omnisharp']
 
 Plug 'neoclide/coc.nvim'
@@ -100,6 +94,11 @@ let g:coc_global_extensions=['coc-json' , 'coc-tsserver' , 'coc-emmet' , 'coc-ts
 
 "tecla maestra o lider
 let mapleader= ','
+
+""------------------------------------------------------------"
+
+" -------------------------Customise-----------------------"
+nmap <leader>rg :Rg<CR>
 
 "------------------------------------------------------------"
 
@@ -207,7 +206,6 @@ endif
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
-set encoding=UTF-8
 let g:webdevicons_enable_nerdtree = 1
 
 
