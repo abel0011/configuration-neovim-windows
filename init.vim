@@ -237,6 +237,7 @@ let g:ctrlp_use_caching = 0
 "------------------------------------------------------------"
 
 "-------------------------IDENT LINE-----------------------"
+"Se ha eliminado este plug
 let g:airline#extensions#tabline#enabled = 1  " show open buffers (like tabs)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Show only filename
 let g:airline_powerline_fonts = 1 " Change separetors to be triangles
