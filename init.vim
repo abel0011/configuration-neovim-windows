@@ -56,7 +56,7 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
-
+Plug 'nvim-treesitter/nvim-treesitter' "java neovim >=0.5
 Plug 'scrooloose/nerdtree' "Presioando n se despliega options
 Plug 'tpope/vim-surround'  
 Plug 'vim-airline/vim-airline'
@@ -95,6 +95,7 @@ let g:coc_global_extensions=['coc-json' , 'coc-tsserver' , 'coc-emmet' , 'coc-ts
 
 "tecla maestra o lider
 let mapleader= ','
+
 
 ""------------------------------------------------------------"
 
