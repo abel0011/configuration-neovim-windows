@@ -11,6 +11,7 @@ set mouse=a " Permite la integración del mouse (seleccionar texto, mover el cur
 set encoding=UTF-8
 " Tamaño por defecto del terminal
 ""set termwinsize=10x0
+set clipboard=unnamedplus "copiar en el portapapeles
 
 set relativenumber    "Numero de saltos
 set cursorline        "Resalta la línea actual
@@ -249,7 +250,7 @@ let g:airline_theme='tomorrow'
 
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gp :Gpush<CR>"gsh"
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
@@ -317,9 +318,6 @@ inoremap " ""<Esc>i
 
 "*********************************************************************************
 
-
-"tecla maestra o lider
-let mapleader= ','
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -490,7 +488,9 @@ let g:bracey_browser_command='brave'
 let g:bracey_server_port=5050
 
 "Prettier
-nmap <leader>f <Plug>:CocCommand prettier.formatFile<Plug>
+""nmap <leader>f <Plug>:CocCommand prettier.formatFile<Plug>
+"El codigo de formatea cada ver que lo guardes
+command! -nargs=0 Prettier :call CocAction('runCommand','prettier.formatFile')
 
 
 autocmd FileType html,css,javascript map <leader>s :Bracey<CR>

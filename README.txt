@@ -21,3 +21,7 @@ http://www.sromero.org/wiki/linux/aplicaciones/manual_vim
 
 lenguaje vim 
 https://www.atareao.es/tutorial/vim/el-lenguaje-de-vim/
+
+solucion a bracey 
+=====================
+npm live server
