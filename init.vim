@@ -249,6 +249,7 @@ let g:airline_theme='tomorrow'
 "-------------------------GIT-----------------------"
 
 noremap <Leader>ga :Gwrite<CR>
+noremap <leader>.  :Git<space>add<space>.<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gp :Gpush<CR>"gsh"
 noremap <Leader>gll :Gpull<CR>
